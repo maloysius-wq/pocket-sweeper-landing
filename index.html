@@ -67,28 +67,6 @@
       margin: 0 auto;
     }
 
-    header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 26px 0 12px;
-    }
-
-    .app-icon {
-      width: 46px;
-      height: 46px;
-      border: 1px solid var(--edge);
-      border-radius: 12px;
-    }
-
-    .brand {
-      font-size: 1.06rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
     main {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(260px, 440px);
@@ -203,7 +181,6 @@
 
     @media (max-width: 740px) {
       .page { width: min(100% - 36px, 480px); }
-      header { padding-top: 20px; }
       main { grid-template-columns: 1fr; gap: 34px; padding: 36px 0 46px; }
       h1 { font-size: clamp(3.4rem, 14vw, 5.7rem); }
       .description { margin: 17px 0 22px; }
@@ -219,11 +196,6 @@
 </head>
 <body>
   <div class="page">
-    <header>
-      <img class="app-icon" src="assets/pocket-sweeper-icon.png" width="46" height="46" alt="">
-      <div class="brand">Pocket Sweeper</div>
-    </header>
-
     <main>
       <section aria-labelledby="headline">
         <p class="eyebrow">Available now on Android</p>
