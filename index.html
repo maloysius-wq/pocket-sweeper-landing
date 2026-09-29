@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100f28">
+  <meta name="description" content="Pocket Sweeper brings a colorful arcade twist to classic mine-sweeping. Available now on Google Play.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pocket Sweeper — One more tile. One more run.">
+  <meta property="og:description" content="A colorful arcade twist on classic mine-sweeping. Get Pocket Sweeper on Google Play.">
+  <meta property="og:image" content="https://maloysius-wq.github.io/pocket-sweeper-landing/assets/pocket-sweeper-gameplay.png">
+  <title>Pocket Sweeper — Available on Google Play</title>
+  <link rel="canonical" href="https://maloysius-wq.github.io/pocket-sweeper-landing/">
+  <link rel="icon" href="assets/pocket-sweeper-icon.png" type="image/png">
+  <style>
+    @font-face {
+      font-family: Oxanium;
+      src: url('assets/Oxanium-wght.ttf') format('truetype');
+      font-style: normal;
+      font-weight: 200 800;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: dark;
+      --ink: #f9f5ff;
+      --muted: #c8c2da;
+      --edge: rgba(184, 155, 255, .24);
+      --pink: #ff8bdb;
+      --blue: #79ddff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { min-width: 320px; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      font-family: Oxanium, "Trebuchet MS", sans-serif;
+      background:
+        radial-gradient(ellipse at 78% 20%, rgba(121, 70, 201, .26), transparent 42%),
+        radial-gradient(ellipse at 18% 86%, rgba(29, 112, 145, .2), transparent 42%),
+        #100f28;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .16;
+      background-image:
+        linear-gradient(rgba(129, 146, 210, .22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(129, 146, 210, .22) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, transparent, #000 24%, #000 75%, transparent);
+    }
+
+    .page {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      width: min(100% - 40px, 1120px);
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 26px 0 12px;
+    }
+
+    .app-icon {
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--edge);
+      border-radius: 12px;
+    }
+
+    .brand {
+      font-size: 1.06rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 440px);
+      align-items: center;
+      gap: clamp(28px, 7vw, 96px);
+      flex: 1;
+      padding: 24px 0 36px;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--blue);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 650px;
+      margin: 0;
+      font-size: clamp(3.3rem, 7.5vw, 6.9rem);
+      font-weight: 800;
+      letter-spacing: -.055em;
+      line-height: .94;
+    }
+
+    h1 span {
+      display: block;
+      padding-bottom: .07em;
+      background: linear-gradient(100deg, #ff98c7 4%, #ffbf8b 39%, #bba5ff 73%, #77e5f2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .description {
+      max-width: 500px;
+      margin: 22px 0 28px;
+      color: var(--muted);
+      font-family: system-ui, sans-serif;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      line-height: 1.55;
+    }
+
+    .play-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      min-height: 60px;
+      padding: 13px 24px;
+      border: 1px solid rgba(255, 255, 255, .5);
+      border-radius: 14px;
+      color: #17122c;
+      background: linear-gradient(105deg, #ffa7d8, #c5a8ff 57%, #8be8ee);
+      box-shadow: 0 12px 38px rgba(141, 101, 226, .25);
+      font-size: 1.03rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .play-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 45px rgba(141, 101, 226, .38);
+    }
+
+    .play-link:focus-visible, footer a:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 4px;
+    }
+
+    .play-link svg { width: 23px; height: 23px; flex: none; }
+
+    .availability {
+      margin: 14px 0 0;
+      color: #a9a2c4;
+      font-size: .84rem;
+      letter-spacing: .035em;
+    }
+
+    .shot-wrap {
+      display: flex;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .shot {
+      display: block;
+      width: min(100%, 370px);
+      height: auto;
+      border: 3px solid rgba(237, 208, 255, .45);
+      border-radius: 27px;
+      box-shadow: 0 0 0 8px rgba(95, 69, 155, .2), 0 30px 70px rgba(0, 0, 0, .5);
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      padding: 18px 0 24px;
+      border-top: 1px solid var(--edge);
+      color: #aaa3c1;
+      font-family: system-ui, sans-serif;
+      font-size: .78rem;
+    }
+
+    footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
+    footer a { color: #c5bee0; text-underline-offset: 3px; }
+
+    @media (max-width: 740px) {
+      .page { width: min(100% - 36px, 480px); }
+      header { padding-top: 20px; }
+      main { grid-template-columns: 1fr; gap: 34px; padding: 36px 0 46px; }
+      h1 { font-size: clamp(3.4rem, 14vw, 5.7rem); }
+      .description { margin: 17px 0 22px; }
+      .shot { width: min(78%, 310px); }
+      footer { justify-content: center; text-align: center; }
+      footer nav { justify-content: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .play-link { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <img class="app-icon" src="assets/pocket-sweeper-icon.png" width="46" height="46" alt="">
+      <div class="brand">Pocket Sweeper</div>
+    </header>
+
+    <main>
+      <section aria-labelledby="headline">
+        <p class="eyebrow">Available now on Android</p>
+        <h1 id="headline">One more tile.<span>One more run.</span></h1>
+        <p class="description">Classic mine-sweeping with a colorful arcade twist. Clear the board, chase a better time, and make every tap count.</p>
+        <a class="play-link" href="https://play.google.com/store/apps/details?id=com.maloysius.pocketsweeper" aria-label="Get Pocket Sweeper on Google Play">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 2.8v18.4c0 .5.5.8.9.6l15.3-9.2a.7.7 0 0 0 0-1.2L4.9 2.2c-.4-.2-.9.1-.9.6Z" fill="currentColor"/></svg>
+          Get it on Google Play
+        </a>
+        <p class="availability">Pocket Sweeper for Android</p>
+      </section>
+
+      <div class="shot-wrap">
+        <img class="shot" src="assets/pocket-sweeper-gameplay.png" width="690" height="1536" alt="Pocket Sweeper gameplay showing a colorful minefield and uncovered tiles">
+      </div>
+    </main>
+
+    <footer>
+      <span>© Pocket Sweeper</span>
+      <nav aria-label="Legal links">
+        <a href="privacy.html">Privacy policy</a>
+        <a href="account-deletion.html">Account deletion</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
